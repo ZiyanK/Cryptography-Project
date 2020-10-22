@@ -63,7 +63,7 @@ while not quitting:
         data = current_data.decode("utf-8")
 
         # Getting the name for establising connection
-        if(data[0] is "^" and data[-1] is "^"):
+        if(data[0] == "^" and data[-1] == "^"):
             print(data[1:-1]+" is Connected")
             name_received = True
             client_names.update({addr: data[1:-1]})
@@ -80,7 +80,7 @@ while not quitting:
 
         data = decrypt(data, ser_pvt_key)
         """take the public key from the client and append it to the key ring"""
-        if(data[0] is "`" and data[-1] is "`"):
+        if(data[0] == "`" and data[-1] == "`"):
             print(data[1:-2])
             data = data[1:-1].split(",")
             key_ring.update({addr: (int(data[0]),int(data[1]))})

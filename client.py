@@ -51,7 +51,7 @@ def receving(name, sock):
             while True:
                 data, addr = sock.recvfrom(1024)
                 data = data.decode("utf-8")
-                if(data[0] is "`" and data[-1] is "`"):
+                if(data[0] == "`" and data[-1] == "`"):
                     data = data[1:-1].split(",")
                     global ser_pub_key
                     ser_pub_key = (int(data[0]),int(data[1]))
