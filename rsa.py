@@ -1,10 +1,3 @@
-"""
-rsa.py
-Mayank Gureja
-03/14/2013
-"""
-
-
 import random
 import math
 
